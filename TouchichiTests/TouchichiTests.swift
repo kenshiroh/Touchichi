@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+import SpriteKit
 
 class TouchichiTests: XCTestCase {
     
@@ -19,6 +20,15 @@ class TouchichiTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+    
+    func testTHSpriteNode(){
+        let thSprite = THSpriteNode(size:CGSize(width: 10, height: 10))
+    }
+    
+    func testUtility(){
+        XCTAssert(Config.json["test"].string == "testvalue", "success!")
+        XCTAssert(randBelow(10) < 10,"success!")
     }
     
     func testExample() {

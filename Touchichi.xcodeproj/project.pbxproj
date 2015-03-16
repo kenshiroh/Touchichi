@@ -7,14 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C0A88991AADAE7B002DB8B8 /* TopScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0A88981AADAE7B002DB8B8 /* TopScene.swift */; };
+		8C0A889E1AADAF18002DB8B8 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0A889D1AADAF18002DB8B8 /* MenuScene.swift */; };
+		8C0A889F1AADAF79002DB8B8 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0A889D1AADAF18002DB8B8 /* MenuScene.swift */; };
+		8C0A88A01AADAF7C002DB8B8 /* TopScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0A88981AADAE7B002DB8B8 /* TopScene.swift */; };
 		8C45C6ED1AA6879900CF4DDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C45C6EC1AA6879900CF4DDD /* AppDelegate.swift */; };
 		8C45C6EF1AA6879900CF4DDD /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8C45C6EE1AA6879900CF4DDD /* GameScene.sks */; };
-		8C45C6F11AA6879900CF4DDD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C45C6F01AA6879900CF4DDD /* GameScene.swift */; };
 		8C45C6F31AA6879900CF4DDD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C45C6F21AA6879900CF4DDD /* GameViewController.swift */; };
 		8C45C6F61AA6879900CF4DDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C45C6F41AA6879900CF4DDD /* Main.storyboard */; };
 		8C45C6F81AA6879900CF4DDD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C45C6F71AA6879900CF4DDD /* Images.xcassets */; };
 		8C45C6FB1AA6879900CF4DDD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C45C6F91AA6879900CF4DDD /* LaunchScreen.xib */; };
 		8C45C7071AA6879900CF4DDD /* TouchichiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C45C7061AA6879900CF4DDD /* TouchichiTests.swift */; };
+		8C45C7111AA689F700CF4DDD /* images in Resources */ = {isa = PBXBuildFile; fileRef = 8C45C7101AA689F700CF4DDD /* images */; };
+		8C45C7131AA715E100CF4DDD /* String+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C45C7121AA715E100CF4DDD /* String+Hex.swift */; };
+		8CE81DB51AB3C4B00078E4DC /* DokanScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81DB41AB3C4B00078E4DC /* DokanScene.swift */; };
+		8CE81DB71AB3C4D50078E4DC /* TemplateScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81DB61AB3C4D50078E4DC /* TemplateScene.swift */; };
+		8CE81DB81AB3CC290078E4DC /* DokanScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81DB41AB3C4B00078E4DC /* DokanScene.swift */; };
+		8CE935A31AA87D5200B0956C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE935A21AA87D5200B0956C /* SwiftyJSON.swift */; };
+		8CE935C61AA87FCF00B0956C /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CE935C51AA87FCF00B0956C /* configuration.json */; };
+		8CE935D01AA94B3C00B0956C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE935CF1AA94B3C00B0956C /* Utility.swift */; };
+		8CE935D11AA94B6700B0956C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE935CF1AA94B3C00B0956C /* Utility.swift */; };
+		8CE935D21AA9DCD900B0956C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C45C6F21AA6879900CF4DDD /* GameViewController.swift */; };
+		8CE935D31AA9DCE400B0956C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE935A21AA87D5200B0956C /* SwiftyJSON.swift */; };
+		8CE935D41AA9DCE400B0956C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C45C6EC1AA6879900CF4DDD /* AppDelegate.swift */; };
+		8CE935D51AA9DCE400B0956C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8C45C6EE1AA6879900CF4DDD /* GameScene.sks */; };
+		8CE935D71AA9DCED00B0956C /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CE935C51AA87FCF00B0956C /* configuration.json */; };
+		8CE935D81AAABF8600B0956C /* String+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C45C7121AA715E100CF4DDD /* String+Hex.swift */; };
+		8CE935DA1AAAD44F00B0956C /* SpriteKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE935D91AAAD44F00B0956C /* SpriteKitExtensions.swift */; };
+		8CE935DB1AAAD45400B0956C /* SpriteKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE935D91AAAD44F00B0956C /* SpriteKitExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,14 +45,22 @@
 			remoteGlobalIDString = 8C45C6E61AA6879900CF4DDD;
 			remoteInfo = Touchichi;
 		};
+		8CE935B81AA87E5700B0956C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C45C6DF1AA6879900CF4DDD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CE935A71AA87E5700B0956C;
+			remoteInfo = sampleSnippets;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C0A88981AADAE7B002DB8B8 /* TopScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopScene.swift; sourceTree = "<group>"; };
+		8C0A889D1AADAF18002DB8B8 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		8C45C6E71AA6879900CF4DDD /* Touchichi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Touchichi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C45C6EB1AA6879900CF4DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C45C6EC1AA6879900CF4DDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C45C6EE1AA6879900CF4DDD /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		8C45C6F01AA6879900CF4DDD /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		8C45C6F21AA6879900CF4DDD /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8C45C6F51AA6879900CF4DDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C45C6F71AA6879900CF4DDD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -40,6 +68,17 @@
 		8C45C7001AA6879900CF4DDD /* TouchichiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchichiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C45C7051AA6879900CF4DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C45C7061AA6879900CF4DDD /* TouchichiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchichiTests.swift; sourceTree = "<group>"; };
+		8C45C7101AA689F700CF4DDD /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = Touchichi/images; sourceTree = "<group>"; };
+		8C45C7121AA715E100CF4DDD /* String+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Hex.swift"; sourceTree = "<group>"; };
+		8CE81DB41AB3C4B00078E4DC /* DokanScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DokanScene.swift; sourceTree = "<group>"; };
+		8CE81DB61AB3C4D50078E4DC /* TemplateScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateScene.swift; sourceTree = "<group>"; };
+		8CE935A11AA87D5200B0956C /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
+		8CE935A21AA87D5200B0956C /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		8CE935A81AA87E5700B0956C /* sampleSnippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleSnippets.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CE935B71AA87E5700B0956C /* sampleSnippetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sampleSnippetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CE935C51AA87FCF00B0956C /* configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration.json; sourceTree = "<group>"; };
+		8CE935CF1AA94B3C00B0956C /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		8CE935D91AAAD44F00B0956C /* SpriteKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteKitExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +96,57 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8CE935A51AA87E5700B0956C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CE935B41AA87E5700B0956C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C0A889A1AADAE86002DB8B8 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8C0A88981AADAE7B002DB8B8 /* TopScene.swift */,
+				8C0A889D1AADAF18002DB8B8 /* MenuScene.swift */,
+				8CE81DB41AB3C4B00078E4DC /* DokanScene.swift */,
+				8CE81DB61AB3C4D50078E4DC /* TemplateScene.swift */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		8C0A889B1AADAE9F002DB8B8 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				8CE935A11AA87D5200B0956C /* SwiftyJSON.h */,
+				8CE935A21AA87D5200B0956C /* SwiftyJSON.swift */,
+				8C45C7121AA715E100CF4DDD /* String+Hex.swift */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		8C0A889C1AADAEB5002DB8B8 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8CE935CF1AA94B3C00B0956C /* Utility.swift */,
+				8CE935D91AAAD44F00B0956C /* SpriteKitExtensions.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		8C45C6DE1AA6879900CF4DDD = {
 			isa = PBXGroup;
 			children = (
+				8C45C7101AA689F700CF4DDD /* images */,
 				8C45C6E91AA6879900CF4DDD /* Touchichi */,
 				8C45C7031AA6879900CF4DDD /* TouchichiTests */,
 				8C45C6E81AA6879900CF4DDD /* Products */,
@@ -74,6 +158,8 @@
 			children = (
 				8C45C6E71AA6879900CF4DDD /* Touchichi.app */,
 				8C45C7001AA6879900CF4DDD /* TouchichiTests.xctest */,
+				8CE935A81AA87E5700B0956C /* sampleSnippets.app */,
+				8CE935B71AA87E5700B0956C /* sampleSnippetsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,10 +167,13 @@
 		8C45C6E91AA6879900CF4DDD /* Touchichi */ = {
 			isa = PBXGroup;
 			children = (
+				8CE935C51AA87FCF00B0956C /* configuration.json */,
+				8C0A889C1AADAEB5002DB8B8 /* Utility */,
+				8C0A889B1AADAE9F002DB8B8 /* Libs */,
+				8C0A889A1AADAE86002DB8B8 /* Scenes */,
+				8C45C6F21AA6879900CF4DDD /* GameViewController.swift */,
 				8C45C6EC1AA6879900CF4DDD /* AppDelegate.swift */,
 				8C45C6EE1AA6879900CF4DDD /* GameScene.sks */,
-				8C45C6F01AA6879900CF4DDD /* GameScene.swift */,
-				8C45C6F21AA6879900CF4DDD /* GameViewController.swift */,
 				8C45C6F41AA6879900CF4DDD /* Main.storyboard */,
 				8C45C6F71AA6879900CF4DDD /* Images.xcassets */,
 				8C45C6F91AA6879900CF4DDD /* LaunchScreen.xib */,
@@ -156,6 +245,41 @@
 			productReference = 8C45C7001AA6879900CF4DDD /* TouchichiTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8CE935A71AA87E5700B0956C /* sampleSnippets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CE935BF1AA87E5700B0956C /* Build configuration list for PBXNativeTarget "sampleSnippets" */;
+			buildPhases = (
+				8CE935A41AA87E5700B0956C /* Sources */,
+				8CE935A51AA87E5700B0956C /* Frameworks */,
+				8CE935A61AA87E5700B0956C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = sampleSnippets;
+			productName = sampleSnippets;
+			productReference = 8CE935A81AA87E5700B0956C /* sampleSnippets.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8CE935B61AA87E5700B0956C /* sampleSnippetsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CE935C21AA87E5700B0956C /* Build configuration list for PBXNativeTarget "sampleSnippetsTests" */;
+			buildPhases = (
+				8CE935B31AA87E5700B0956C /* Sources */,
+				8CE935B41AA87E5700B0956C /* Frameworks */,
+				8CE935B51AA87E5700B0956C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CE935B91AA87E5700B0956C /* PBXTargetDependency */,
+			);
+			name = sampleSnippetsTests;
+			productName = sampleSnippetsTests;
+			productReference = 8CE935B71AA87E5700B0956C /* sampleSnippetsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -171,6 +295,13 @@
 					8C45C6FF1AA6879900CF4DDD = {
 						CreatedOnToolsVersion = 6.1.1;
 						TestTargetID = 8C45C6E61AA6879900CF4DDD;
+					};
+					8CE935A71AA87E5700B0956C = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					8CE935B61AA87E5700B0956C = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 8CE935A71AA87E5700B0956C;
 					};
 				};
 			};
@@ -189,6 +320,8 @@
 			targets = (
 				8C45C6E61AA6879900CF4DDD /* Touchichi */,
 				8C45C6FF1AA6879900CF4DDD /* TouchichiTests */,
+				8CE935A71AA87E5700B0956C /* sampleSnippets */,
+				8CE935B61AA87E5700B0956C /* sampleSnippetsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -198,14 +331,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C45C7111AA689F700CF4DDD /* images in Resources */,
 				8C45C6FB1AA6879900CF4DDD /* LaunchScreen.xib in Resources */,
 				8C45C6F81AA6879900CF4DDD /* Images.xcassets in Resources */,
 				8C45C6EF1AA6879900CF4DDD /* GameScene.sks in Resources */,
+				8CE935C61AA87FCF00B0956C /* configuration.json in Resources */,
 				8C45C6F61AA6879900CF4DDD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8C45C6FE1AA6879900CF4DDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CE935D71AA9DCED00B0956C /* configuration.json in Resources */,
+				8CE935D51AA9DCE400B0956C /* GameScene.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CE935A61AA87E5700B0956C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CE935B51AA87E5700B0956C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -219,8 +370,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C45C6F11AA6879900CF4DDD /* GameScene.swift in Sources */,
+				8CE935DA1AAAD44F00B0956C /* SpriteKitExtensions.swift in Sources */,
+				8C0A88991AADAE7B002DB8B8 /* TopScene.swift in Sources */,
+				8CE81DB71AB3C4D50078E4DC /* TemplateScene.swift in Sources */,
+				8C0A889E1AADAF18002DB8B8 /* MenuScene.swift in Sources */,
+				8CE81DB51AB3C4B00078E4DC /* DokanScene.swift in Sources */,
 				8C45C6F31AA6879900CF4DDD /* GameViewController.swift in Sources */,
+				8CE935D01AA94B3C00B0956C /* Utility.swift in Sources */,
+				8C45C7131AA715E100CF4DDD /* String+Hex.swift in Sources */,
+				8CE935A31AA87D5200B0956C /* SwiftyJSON.swift in Sources */,
 				8C45C6ED1AA6879900CF4DDD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,7 +387,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CE935D11AA94B6700B0956C /* Utility.swift in Sources */,
+				8CE935D21AA9DCD900B0956C /* GameViewController.swift in Sources */,
+				8C0A889F1AADAF79002DB8B8 /* MenuScene.swift in Sources */,
+				8CE935DB1AAAD45400B0956C /* SpriteKitExtensions.swift in Sources */,
 				8C45C7071AA6879900CF4DDD /* TouchichiTests.swift in Sources */,
+				8C0A88A01AADAF7C002DB8B8 /* TopScene.swift in Sources */,
+				8CE935D81AAABF8600B0956C /* String+Hex.swift in Sources */,
+				8CE935D41AA9DCE400B0956C /* AppDelegate.swift in Sources */,
+				8CE81DB81AB3CC290078E4DC /* DokanScene.swift in Sources */,
+				8CE935D31AA9DCE400B0956C /* SwiftyJSON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CE935A41AA87E5700B0956C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CE935B31AA87E5700B0956C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +421,11 @@
 			isa = PBXTargetDependency;
 			target = 8C45C6E61AA6879900CF4DDD /* Touchichi */;
 			targetProxy = 8C45C7011AA6879900CF4DDD /* PBXContainerItemProxy */;
+		};
+		8CE935B91AA87E5700B0956C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CE935A71AA87E5700B0956C /* sampleSnippets */;
+			targetProxy = 8CE935B81AA87E5700B0956C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -363,7 +549,6 @@
 		8C45C70E1AA6879900CF4DDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -375,14 +560,12 @@
 				INFOPLIST_FILE = TouchichiTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Touchichi.app/Touchichi";
 			};
 			name = Debug;
 		};
 		8C45C70F1AA6879900CF4DDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -390,7 +573,81 @@
 				INFOPLIST_FILE = TouchichiTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Touchichi.app/Touchichi";
+				"TEST_HOST[sdk=iphoneos*]" = "";
+			};
+			name = Release;
+		};
+		8CE935C01AA87E5700B0956C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = sampleSnippets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8CE935C11AA87E5700B0956C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = sampleSnippets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8CE935C31AA87E5700B0956C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = sampleSnippetsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sampleSnippets.app/Contents/MacOS/sampleSnippets";
+			};
+			name = Debug;
+		};
+		8CE935C41AA87E5700B0956C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = sampleSnippetsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sampleSnippets.app/Contents/MacOS/sampleSnippets";
 			};
 			name = Release;
 		};
@@ -413,6 +670,7 @@
 				8C45C70C1AA6879900CF4DDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C45C70D1AA6879900CF4DDD /* Build configuration list for PBXNativeTarget "TouchichiTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +679,25 @@
 				8C45C70F1AA6879900CF4DDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CE935BF1AA87E5700B0956C /* Build configuration list for PBXNativeTarget "sampleSnippets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CE935C01AA87E5700B0956C /* Debug */,
+				8CE935C11AA87E5700B0956C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CE935C21AA87E5700B0956C /* Build configuration list for PBXNativeTarget "sampleSnippetsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CE935C31AA87E5700B0956C /* Debug */,
+				8CE935C41AA87E5700B0956C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

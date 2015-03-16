@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>TouchichiTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>sampleSnippets.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +28,16 @@
 			<true/>
 		</dict>
 		<key>8C45C6FF1AA6879900CF4DDD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8CE935A71AA87E5700B0956C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8CE935B61AA87E5700B0956C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

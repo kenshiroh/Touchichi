@@ -8,9 +8,8 @@
 
 import SpriteKit
 
-class TopScene: SKScene {
-    override init(size: CGSize){
-        super.init(size:size)
+class TopScene: THScene {
+    override func initialize() {
         /* Setup your scene here */
         backgroundColor = SKColor.fromHexCode("#00a900")
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
@@ -30,14 +29,12 @@ class TopScene: SKScene {
         bgHiyoko.position = CGPoint(x: size.width/2, y: size.height/2)
         addChild(bgHiyoko)
     }
-    required init(coder aDecorder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
 }
 
 class BgHiyokoAtMenu : THSpriteNode {
     override func onTouchBegan() {
-        let scene = self.parent as SKScene
+        let scene = self.parent as THScene
         scene.changeScene(MenuScene(size: scene.size))
     }
 }

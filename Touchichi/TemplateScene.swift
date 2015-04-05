@@ -8,23 +8,12 @@
 
 import SpriteKit
 
-class TemplateScene: SKScene {
-    override init(size: CGSize){
-        super.init(size:size)
+class TemplateScene: THScene {
+    override func initialize() {
         /* Setup your scene here */
         backgroundColor = SKColor.fromHexCode("#00a900")
-    }
-    required init(coder aDecorder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 
 class SampleSprite : THSpriteNode {
-    override init(img: String){
-        super.init(img:img)
-    }
-
-    required init(coder aDecorder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }    
 }

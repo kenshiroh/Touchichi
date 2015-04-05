@@ -15,7 +15,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         // initial scene
-        let scene = DokanScene(size: SCREEN_SIZE)
+        let scene = MenuScene(size: SCREEN_SIZE)
         println(scene.size)
         
         let skView = view as SKView

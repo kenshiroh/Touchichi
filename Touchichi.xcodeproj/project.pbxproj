@@ -20,6 +20,15 @@
 		8C45C7071AA6879900CF4DDD /* TouchichiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C45C7061AA6879900CF4DDD /* TouchichiTests.swift */; };
 		8C45C7111AA689F700CF4DDD /* images in Resources */ = {isa = PBXBuildFile; fileRef = 8C45C7101AA689F700CF4DDD /* images */; };
 		8C45C7131AA715E100CF4DDD /* String+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C45C7121AA715E100CF4DDD /* String+Hex.swift */; };
+		8C8B7B061ABCFEB0001F08E4 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 8C8B7B051ABCFEB0001F08E4 /* sounds */; };
+		8C8B7B081ABD7F32001F08E4 /* UnchiScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B7B071ABD7F32001F08E4 /* UnchiScene.swift */; };
+		8C8B7B091ABD7F32001F08E4 /* UnchiScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B7B071ABD7F32001F08E4 /* UnchiScene.swift */; };
+		8C8B7B0B1AC05B50001F08E4 /* HideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B7B0A1AC05B50001F08E4 /* HideScene.swift */; };
+		8C8B7B0C1AC05B50001F08E4 /* HideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B7B0A1AC05B50001F08E4 /* HideScene.swift */; };
+		8C8B7B0E1AC24124001F08E4 /* PigScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B7B0D1AC24124001F08E4 /* PigScene.swift */; };
+		8C8B7B0F1AC24124001F08E4 /* PigScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B7B0D1AC24124001F08E4 /* PigScene.swift */; };
+		8C8B7B111AC84307001F08E4 /* DaikonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B7B101AC84307001F08E4 /* DaikonScene.swift */; };
+		8C8B7B121AC84307001F08E4 /* DaikonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B7B101AC84307001F08E4 /* DaikonScene.swift */; };
 		8CE81DB51AB3C4B00078E4DC /* DokanScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81DB41AB3C4B00078E4DC /* DokanScene.swift */; };
 		8CE81DB71AB3C4D50078E4DC /* TemplateScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81DB61AB3C4D50078E4DC /* TemplateScene.swift */; };
 		8CE81DB81AB3CC290078E4DC /* DokanScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81DB41AB3C4B00078E4DC /* DokanScene.swift */; };
@@ -70,6 +79,11 @@
 		8C45C7061AA6879900CF4DDD /* TouchichiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchichiTests.swift; sourceTree = "<group>"; };
 		8C45C7101AA689F700CF4DDD /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = Touchichi/images; sourceTree = "<group>"; };
 		8C45C7121AA715E100CF4DDD /* String+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Hex.swift"; sourceTree = "<group>"; };
+		8C8B7B051ABCFEB0001F08E4 /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
+		8C8B7B071ABD7F32001F08E4 /* UnchiScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnchiScene.swift; sourceTree = "<group>"; };
+		8C8B7B0A1AC05B50001F08E4 /* HideScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideScene.swift; sourceTree = "<group>"; };
+		8C8B7B0D1AC24124001F08E4 /* PigScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PigScene.swift; sourceTree = "<group>"; };
+		8C8B7B101AC84307001F08E4 /* DaikonScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaikonScene.swift; sourceTree = "<group>"; };
 		8CE81DB41AB3C4B00078E4DC /* DokanScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DokanScene.swift; sourceTree = "<group>"; };
 		8CE81DB61AB3C4D50078E4DC /* TemplateScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateScene.swift; sourceTree = "<group>"; };
 		8CE935A11AA87D5200B0956C /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
@@ -120,6 +134,10 @@
 				8C0A889D1AADAF18002DB8B8 /* MenuScene.swift */,
 				8CE81DB41AB3C4B00078E4DC /* DokanScene.swift */,
 				8CE81DB61AB3C4D50078E4DC /* TemplateScene.swift */,
+				8C8B7B071ABD7F32001F08E4 /* UnchiScene.swift */,
+				8C8B7B0A1AC05B50001F08E4 /* HideScene.swift */,
+				8C8B7B0D1AC24124001F08E4 /* PigScene.swift */,
+				8C8B7B101AC84307001F08E4 /* DaikonScene.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -146,6 +164,7 @@
 		8C45C6DE1AA6879900CF4DDD = {
 			isa = PBXGroup;
 			children = (
+				8C8B7B051ABCFEB0001F08E4 /* sounds */,
 				8C45C7101AA689F700CF4DDD /* images */,
 				8C45C6E91AA6879900CF4DDD /* Touchichi */,
 				8C45C7031AA6879900CF4DDD /* TouchichiTests */,
@@ -333,6 +352,7 @@
 			files = (
 				8C45C7111AA689F700CF4DDD /* images in Resources */,
 				8C45C6FB1AA6879900CF4DDD /* LaunchScreen.xib in Resources */,
+				8C8B7B061ABCFEB0001F08E4 /* sounds in Resources */,
 				8C45C6F81AA6879900CF4DDD /* Images.xcassets in Resources */,
 				8C45C6EF1AA6879900CF4DDD /* GameScene.sks in Resources */,
 				8CE935C61AA87FCF00B0956C /* configuration.json in Resources */,
@@ -372,12 +392,16 @@
 			files = (
 				8CE935DA1AAAD44F00B0956C /* SpriteKitExtensions.swift in Sources */,
 				8C0A88991AADAE7B002DB8B8 /* TopScene.swift in Sources */,
+				8C8B7B0B1AC05B50001F08E4 /* HideScene.swift in Sources */,
 				8CE81DB71AB3C4D50078E4DC /* TemplateScene.swift in Sources */,
 				8C0A889E1AADAF18002DB8B8 /* MenuScene.swift in Sources */,
 				8CE81DB51AB3C4B00078E4DC /* DokanScene.swift in Sources */,
+				8C8B7B111AC84307001F08E4 /* DaikonScene.swift in Sources */,
 				8C45C6F31AA6879900CF4DDD /* GameViewController.swift in Sources */,
+				8C8B7B081ABD7F32001F08E4 /* UnchiScene.swift in Sources */,
 				8CE935D01AA94B3C00B0956C /* Utility.swift in Sources */,
 				8C45C7131AA715E100CF4DDD /* String+Hex.swift in Sources */,
+				8C8B7B0E1AC24124001F08E4 /* PigScene.swift in Sources */,
 				8CE935A31AA87D5200B0956C /* SwiftyJSON.swift in Sources */,
 				8C45C6ED1AA6879900CF4DDD /* AppDelegate.swift in Sources */,
 			);
@@ -389,12 +413,16 @@
 			files = (
 				8CE935D11AA94B6700B0956C /* Utility.swift in Sources */,
 				8CE935D21AA9DCD900B0956C /* GameViewController.swift in Sources */,
+				8C8B7B0C1AC05B50001F08E4 /* HideScene.swift in Sources */,
 				8C0A889F1AADAF79002DB8B8 /* MenuScene.swift in Sources */,
 				8CE935DB1AAAD45400B0956C /* SpriteKitExtensions.swift in Sources */,
 				8C45C7071AA6879900CF4DDD /* TouchichiTests.swift in Sources */,
+				8C8B7B121AC84307001F08E4 /* DaikonScene.swift in Sources */,
 				8C0A88A01AADAF7C002DB8B8 /* TopScene.swift in Sources */,
+				8C8B7B091ABD7F32001F08E4 /* UnchiScene.swift in Sources */,
 				8CE935D81AAABF8600B0956C /* String+Hex.swift in Sources */,
 				8CE935D41AA9DCE400B0956C /* AppDelegate.swift in Sources */,
+				8C8B7B0F1AC24124001F08E4 /* PigScene.swift in Sources */,
 				8CE81DB81AB3CC290078E4DC /* DokanScene.swift in Sources */,
 				8CE935D31AA9DCE400B0956C /* SwiftyJSON.swift in Sources */,
 			);
@@ -530,6 +558,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Touchichi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -540,6 +569,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Touchichi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

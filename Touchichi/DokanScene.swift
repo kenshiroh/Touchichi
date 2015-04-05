@@ -15,26 +15,42 @@ let hamsterTypeList = [
     "pink",
 ]
 
-class DokanScene: SKScene, SKPhysicsContactDelegate {
-    var movingHamsters : [THSpriteNode] = []
+class DokanScene: THScene, SKPhysicsContactDelegate {
+    var catAppeared : Bool = false
     override init(size: CGSize) {
         super.init(size:size)
+        preloadSounds([
+            "emitFromDokan",
+            "hamsterHitEachOther",
+            "catAppear"
+        ])
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func initialize() {
         backgroundColor = SKColor.fromHexCode("#59004f")
         physicsWorld.gravity = CGVectorMake(0, 0)
         physicsWorld.contactDelegate = self
-        
-        addCommonHeader()
-        makeWallsAllAround()
         
         let dokan = Dokan(img:"hamster/dokan",scale:2.5)
         dokan.position = CGPoint(x:dokan.leftEndX()-30,y:30)
         dokan.zRotation = radFromDegree(-45)
         dokan.addRectBackgroundPhysics()
+        dokan.name = "dokan"
         addChild(dokan)
-        
+
+        self.addCommonHeader()
+        self.makeWallsAllAround()
     }
-        
+    
     override func onTouchBegan() {
+        self.accelerateAllHamsters()
+    }
+    
+    func accelerateAllHamsters(){
         self.enumerateChildNodesWithName("movingHamster") {
             node,stop in
             node
@@ -42,11 +58,12 @@ class DokanScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func didBeginContact(firstBody: SKPhysicsBody, secondBody: SKPhysicsBody) {
-        // both are hamster
-        if(firstBody.categoryBitMask == PhysicsCategory.moving){
-            let hamster1 = firstBody.node as hamsterDokan
-            let hamster2 = secondBody.node as hamsterDokan
+    override func didBeginContact(firstNode: SKNode, secondNode: SKNode) {
+        // both are hamsters
+        if(firstNode.physicsBody?.categoryBitMask == PhysicsCategory.moving){
+            runAction(SKAction.playSound("hamsterHitEachOther"))
+            let hamster1 = firstNode as hamsterDokan
+            let hamster2 = secondNode as hamsterDokan
             hamster1.runHitFaceActionIfNormal()
             hamster2.runHitFaceActionIfNormal()
         }
@@ -54,54 +71,90 @@ class DokanScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         super.touchesBegan(touches,withEvent:event)
-        
     }
 
-    required init(coder aDecorder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func catAppear(){
+        let cat = THSpriteNode(
+            img: "cat/cat",
+            scale:3.0,
+            zPosition: -100.0
+            )
+        cat.position = CGPoint(x:-1*cat.size.width,y:centerY())
+        let dokan = self.childNodeWithName("dokan") as Dokan
+        self.catAppeared = true
+        cat.runAction(
+            cat.switchTextureForeverAction(["cat/cat","cat/cat2"],interval:0.5)
+        )
+        cat.runActionInSequence([
+            SKAction.playSound("catAppear"),
+            SKAction.moveTo(CGPoint(x:centerX(),y:centerY()), duration:4.0),
+            SKAction.runBlock(){
+                dokan.disableTouch()
+                cat.removeAllActions()
+                cat.runActionInSequence([
+                    SKAction.waitForDuration(2.0),
+                    cat.changeTextureAction("cat/catScary"),
+                    SKAction.playSound("catBecomeScary"),
+                    SKAction.playSound("hamstersGoAway"),
+                    SKAction.runBlock(){ self.hamstersGoAway() },
+                    SKAction.waitForDuration(3.0),
+                    self.changeSceneAction(DokanScene(size:self.size)),
+                ])
+            }
+        ])
+        addChild(cat)
+    }
+    
+    func hamstersGoAway(){
+        self.removeWallsAllAround()
+        self.accelerateAllHamsters()
     }
 }
 
 class Dokan : THSpriteNode {
     override func onTouchBegan() {
-        if touchDisabled { return }
-        touchDisabled = true
+        disableTouch()
+
+        let parentScene : DokanScene = self.parent as DokanScene
+        if parentScene.catAppeared { return }
         
         // 土管の発射後の収縮
-        runAction(SKAction.sequence([
-            SKAction.scaleBy(1.3, duration: 0.13),
-            SKAction.scaleBy(0.8, duration: 0.13),
-            SKAction.scaleBy(1.15, duration: 0.13),
-            SKAction.scaleBy(0.9, duration: 0.13),
-            SKAction.scaleBy(1.05, duration: 0.13),
-            SKAction.scaleBy(0.89, duration: 0.13),
-            SKAction.runBlock(){ self.touchDisabled = false }
-            ]))
+        var sequence = [SKAction.playSound("emitFromDokan")]
+        sequence.extend(SKAction.vibrateActionSequence())
+        sequence.append(SKAction.runBlock(){ self.enableTouch() })
+        runActionInSequence(sequence)
         
         // 発射されるハムスター
         let hamColor = hamsterTypeList[randBelow(4)]
-        let hamster = hamsterDokan(img: "hamster/" + hamColor,name:hamColor)
-        let parentScene : SKScene = self.parent as SKScene
+        let hamster = hamsterDokan(
+            img: "hamster/" + hamColor,
+            name:"movingHamster",
+            scale:1.4,
+            zRotation:radFromDegree(-45.0),
+            position:posByRatio(x: 0.24, y: 0.15)
+        )
+        hamster.addPhysics()
         parentScene.addChild(hamster)
-        hamster.name = "movingHamster"
-        hamster.zRotation = radFromDegree(-45.0)
-        hamster.position = posByRatio(x: 0.24, y: 0.15)
-        hamster.physicsBody = SKPhysicsBody(circleOfRadius: hamster.size.width/2.0)
-        hamster.physicsBody?.dynamic = true
-        hamster.physicsBody?.restitution = 1.0
-        hamster.physicsBody?.categoryBitMask = PhysicsCategory.moving
-        hamster.physicsBody?.collisionBitMask = PhysicsCategory.All
-        hamster.physicsBody?.contactTestBitMask = PhysicsCategory.moving
         hamster.physicsBody?.applyImpulse(CGVectorMake(100.0, 100.0))
+        
+        if(parentScene.countChildrenWithName("movingHamster") > 5){
+            parentScene.catAppear()
+        }
+        
     }
+    
 }
 
 class hamsterDokan : THSpriteNode {
     var hitFaceNow : Bool = false
     
-    override init(img: String,name:String){
-        super.init(img:img,name:name)
-        self.scaleBy(1.4)
+    func addPhysics(){
+        self.physicsBody = SKPhysicsBody(circleOfRadius: self.size.width/2.0)
+        self.physicsBody?.dynamic = true
+        self.physicsBody?.restitution = 1.0
+        self.physicsBody?.categoryBitMask = PhysicsCategory.moving
+        self.physicsBody?.collisionBitMask = PhysicsCategory.All
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.moving
     }
     
     func runHitFaceActionIfNormal(){
@@ -117,9 +170,5 @@ class hamsterDokan : THSpriteNode {
     
     override func onTouchBegan() {
         self.physicsBody?.applyImpulse(CGVectorMake(100.0, 100.0))
-    }
-    
-    required init(coder aDecorder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

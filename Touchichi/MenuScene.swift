@@ -8,80 +8,136 @@
 
 import SpriteKit
 
-let iconSceneDic = [
+let iconSceneConf = [
     [
         "image": "page/buttonDaikonTouch",
-        "scene": TopScene(size:SCREEN_SIZE),
+        "scene": DaikonScene(size:SCREEN_SIZE),
         "position": [0.25,0.68],
     ],
     [
         "image": "page/buttonHamsterPyon",
-        "scene": TopScene(size:SCREEN_SIZE),
+        "scene": DokanScene(size:SCREEN_SIZE),
         "position": [0.25,0.32],
     ],
     [
         "image": "page/buttonUnchi",
-        "scene": TopScene(size:SCREEN_SIZE),
+        "scene": UnchiScene(size:SCREEN_SIZE),
         "position": [0.5,0.5],
     ],
     [
         "image": "page/buttonHide",
-        "scene": TopScene(size:SCREEN_SIZE),
+        "scene": HideScene(size:SCREEN_SIZE),
         "position": [0.75,0.32],
     ],
     [
         "image": "page/buttonPig",
-        "scene": TopScene(size:SCREEN_SIZE),
+        "scene": PigScene(size:SCREEN_SIZE),
         "position": [0.75,0.68],
     ],
 ]
 
-class MenuScene: SKScene {
+class MenuScene: THScene {
+    var currentPage : Int = 1
     override init(size: CGSize){
         super.init(size:size)
         /* Setup your scene here */
         backgroundColor = SKColor.fromHexCode("#00a900")
         
-        let iconbg = THSpriteNode(img:"page/iconbg")
+        loadPage()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func initialize() {
+        
+    }
+    
+    func loadPage(){
+        self.removeAllChildren()
+        let iconbg = THSpriteNode(img:"page/iconbg",scale:0.95)
         iconbg.position = CGPoint(x: size.width/2, y:size.height/2)
         addChild(iconbg)
+
+        println(currentPage)
+        if currentPage == 1 {
+            loadIconListPage(1)
+        }
+        
+        if currentPage > 1 {
+            loadTBDPage()
+        }
+    }
+    
+    func loadTBDPage(){
+        let leftArrow = leftMenuArrowIcon(
+            img: "page/arrow",
+            scale: 1.7
+        )
+        leftArrow.position = CGPoint(x: leftArrow.leftEndX()+5, y: centerY())
+        leftArrow.runAction(leftArrow.tiltForeverAction(15.0))
+        addChild(leftArrow)
+
+        let tba = THSpriteNode(img:"page/tba",scale:3.0,position:CGPointMake(centerX(),centerY()))
+        addChild(tba)
+}
+    
+    func loadIconListPage(pageNum:Int){
         
         [0.2,0.4,0.6,0.8].each{(range) in
-            let hiyoko = bgHiyoko(img:"hiyoko/yellowFront")
+            let imageName = "hiyoko/yellowFront"
+            let hiyoko : bgHiyoko = bgHiyoko(img:imageName)
             hiyoko.position = posByRatio(x:CGFloat(range),y:0.9)
             hiyoko.defaultPosition = hiyoko.position
             hiyoko.jumpingAction()
             self.addChild(hiyoko)
         }
         
-        iconSceneDic.each{(config) in
-            let icon = iconImage(img: config["image"] as String,scene:config["scene"] as SKScene,pos:config["position"] as [CGFloat])
+        iconSceneConf.each{(config) in
+            let icon = iconImage(img: config["image"] as String,scene:config["scene"] as THScene,pos:config["position"] as [CGFloat])
             self.addChild(icon)
         }
-        let hiyoko = bgHiyoko(img:"hiyoko/yellowFront")
-     }
-    required init(coder aDecorder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        
+        let rightArrow = rightMenuArrowIcon(
+            img: "page/arrow",
+            scale: 1.7
+        )
+        rightArrow.xScale *= -1
+        rightArrow.position = CGPoint(x: rightArrow.rightEndX(), y: centerY())
+        rightArrow.runAction(rightArrow.tiltForeverAction(15.0))
+        addChild(rightArrow)
+    }
+}
+
+class rightMenuArrowIcon : THSpriteNode {
+    override func onTouchBegan() {
+        let parentScene = self.parent as MenuScene
+        parentScene.currentPage += 1
+        parentScene.loadPage()
+    }
+}
+
+class leftMenuArrowIcon : THSpriteNode {
+    override func onTouchBegan() {
+        let parentScene = self.parent as MenuScene
+        parentScene.currentPage -= 1
+        parentScene.loadPage()
     }
 }
 
 class iconImage : THSpriteNode {
-    var transitionScene : SKScene
-    init(img:String,scene:SKScene,pos:[CGFloat]){
+    var transitionScene : THScene
+    init(img:String,scene:THScene,pos:[CGFloat]){
         transitionScene = scene
-        let tiltAngle : CGFloat = 15.0
         super.init(img:img)
         self.position = posByRatio(x:pos[0], y:pos[1])
         self.scaleBy(1.7)
-        self.zRotation = radFromDegree(-1.0*tiltAngle)
-        self.runAction(SKAction.repeatActionForeverInSequence([
-            SKAction.rotateByDegree(2.0 * tiltAngle, duration: 0.8),
-            SKAction.rotateByDegree(-2.0 * tiltAngle, duration: 0.8),
-            ]))
+        self.runAction(self.tiltForeverAction(15.0))
     }
     
     override func onTouchBegan() {
-        let parentScene = self.parent as SKScene
+        let parentScene = self.parent as THScene
         parentScene.changeScene(transitionScene)
     }
 
@@ -92,11 +148,6 @@ class iconImage : THSpriteNode {
 
 class bgHiyoko : THSpriteNode {
     var defaultPosition : CGPoint = ZERO_POINT
-    
-    override init(img: String){
-        super.init(img:img)
-    }
-    
     override func onTouchBegan() {
         if touchDisabled { return }
         self.removeAllActions()
@@ -135,9 +186,5 @@ class bgHiyoko : THSpriteNode {
         self.runAction( SKAction.repeatActionForever(SKAction.group([
             jumpAction
             ])),withKey:"jumpAction")
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

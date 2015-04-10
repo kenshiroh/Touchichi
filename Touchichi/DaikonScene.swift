@@ -42,6 +42,10 @@ class DaikonScene: THScene {
             addChild(daikon)
         }
     }
+
+    override func penetrateTouch() -> Bool{
+        return true
+    }
 }
 
 class DaikonSprite : THSpriteNode {
@@ -73,7 +77,8 @@ class DaikonSprite : THSpriteNode {
     
     override func onTouchBegan(){
         disableTouch()
-        runAction(SKAction.playSound("daikonTouched"))
+        let parentScene = self.parent as THScene
+        parentScene.runAction(SKAction.playSound("daikonTouched"))
         self.removeAllActions()
         runActionInSequence([
             changeTextureAction("daikon/non"),

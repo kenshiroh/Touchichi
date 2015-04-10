@@ -26,6 +26,30 @@ class Config {
 }
 
 ///////////////////
+// AdObject
+///////////////////
+
+var amoadView: AMoAdView!
+var controller: GameViewController!
+
+func addAdView(){
+    controller.view.addSubview(amoadView)
+}
+
+func initializeAdView(){
+    amoadView = AMoAdView(frame: CGRectMake(0, SCREEN_SIZE.height - 50, 320, 50))
+    amoadView.sid = "62056d310111552cb7f04a8a5f63addba5adae91fd08aa653cd9d68c981f3228"
+    amoadView.rotateTransition = AMoAdRotateTransitionFlipFromLeft
+    amoadView.clickTransition = AMoAdClickTransitionJump
+}
+
+func removeAdView(){
+    amoadView.removeFromSuperview()
+}
+
+
+
+///////////////////
 // Sound and Music
 ///////////////////
 
@@ -35,9 +59,11 @@ var bgmPlayer: AVAudioPlayer!
 let soundDict = [
     // top
     "topBGM": "BGM1.mp3",
+    "hiyokoCrash": "stupid3.mp3",
     // unchi
     "unchiEmit": "unchi3.mp3",
     "unchiHitHiyoko": "jumpCute1.mp3",
+    "hiyokoRunAway": "hamsterPyu.mp3",
     // daikon touch
     "daikonTouched": "boyoyon.mp3",
     // hat
@@ -82,6 +108,10 @@ func playBGM(filename: String) {
         println("Could not find file: \(filename)")
         return
     }
+    else if(bgmPlayer != nil && bgmPlayer.playing){
+        println("BGM already playing")
+        return
+    }
     
     var error: NSError? = nil
     bgmPlayer =
@@ -90,7 +120,7 @@ func playBGM(filename: String) {
         println("Could not create audio player: \(error!)")
         return
     }
-    
+    AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient, error: nil)
     bgmPlayer.numberOfLoops = -1
     bgmPlayer.prepareToPlay()
     bgmPlayer.play()
@@ -99,8 +129,12 @@ func playBGM(filename: String) {
 func stopBGM(){
     if bgmPlayer == nil { return }
     if bgmPlayer.playing {
-        bgmPlayer.stop()
+        bgmPlayer.pause()
     }
+}
+
+func resumeBGM(){
+    bgmPlayer.play()
 }
 
 

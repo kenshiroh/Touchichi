@@ -14,6 +14,7 @@ class UnchiScene: THScene, SKPhysicsContactDelegate {
         preloadSounds([
             "unchiEmit",
             "unchiHitHiyoko",
+            "hiyokoRunAway",
             ])
     }
     
@@ -89,7 +90,7 @@ class UnchiBird : THSpriteNode {
     func hitUnchi(unchi:UnchiSprite){
         let parentScene = self.parent as UnchiScene
         
-        runAction(SKAction.playSound("unchiHitHiyoko"))
+        parentScene.runAction(SKAction.playSound("unchiHitHiyoko"))
         
         parentScene.removeActionForKey("makeBirdAction")
         
@@ -120,6 +121,7 @@ class UnchiBird : THSpriteNode {
         })
         unchi.runActionInSequence([
             SKAction.waitForDuration(1.0),
+            SKAction.playSound("hiyokoRunAway"),
             SKAction.moveBy(CGVectorMake(SCREEN_SIZE.width, 0.0), duration: 1.0),
             self.removeFromParentAction(),
             SKAction.runBlock(){

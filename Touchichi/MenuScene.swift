@@ -42,7 +42,10 @@ class MenuScene: THScene {
         super.init(size:size)
         /* Setup your scene here */
         backgroundColor = SKColor.fromHexCode("#00a900")
-        
+        preloadSounds([
+            "topBGM",
+            "hiyokoCrash",
+            ])
         loadPage()
     }
 
@@ -51,7 +54,7 @@ class MenuScene: THScene {
     }
     
     override func initialize() {
-        
+        playBGM("sounds/BGM1.mp3")
     }
     
     func loadPage(){
@@ -150,6 +153,8 @@ class bgHiyoko : THSpriteNode {
     var defaultPosition : CGPoint = ZERO_POINT
     override func onTouchBegan() {
         if touchDisabled { return }
+        let parentScene = self.parent as THScene
+        parentScene.runAction(SKAction.playSound("hiyokoCrash"))
         self.removeAllActions()
         self.position = self.defaultPosition
         self.yScale *= -1

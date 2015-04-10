@@ -9,10 +9,13 @@
 import UIKit
 import SpriteKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController,AMoAdViewDelegate {
+    var bgmSuspendedOnSuspend : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        controller = self
         
         // initial scene
         let scene = MenuScene(size: SCREEN_SIZE)
@@ -24,6 +27,32 @@ class GameViewController: UIViewController {
         skView.ignoresSiblingOrder = true
         scene.scaleMode = .AspectFit
         skView.presentScene(scene)
+        scene.initialize()
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("appliWentBackground:"), name:UIApplicationDidEnterBackgroundNotification, object: nil)
+
+        let foregroundNotification = NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationWillEnterForegroundNotification, object: nil, queue: NSOperationQueue.mainQueue()) {
+            [unowned self] notification in
+            
+            // do whatever you want when the app is brought back to the foreground
+            println("appli is back on forground!")
+            if(self.bgmSuspendedOnSuspend == true){
+                resumeBGM()
+                self.bgmSuspendedOnSuspend = false
+            }
+        }
+
+        // 広告の設置
+        initializeAdView()
+        addAdView()
+    }
+    
+    func appliWentBackground(notification : NSNotification){
+        println("appli went background...")
+        if(bgmPlayer != nil && bgmPlayer.playing == true){
+            stopBGM()
+            self.bgmSuspendedOnSuspend = true
+        }
     }
     
     override func prefersStatusBarHidden() -> Bool {

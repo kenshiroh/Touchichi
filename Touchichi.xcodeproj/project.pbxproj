@@ -15,7 +15,6 @@
 		8C45C6EF1AA6879900CF4DDD /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8C45C6EE1AA6879900CF4DDD /* GameScene.sks */; };
 		8C45C6F31AA6879900CF4DDD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C45C6F21AA6879900CF4DDD /* GameViewController.swift */; };
 		8C45C6F61AA6879900CF4DDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C45C6F41AA6879900CF4DDD /* Main.storyboard */; };
-		8C45C6F81AA6879900CF4DDD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C45C6F71AA6879900CF4DDD /* Images.xcassets */; };
 		8C45C6FB1AA6879900CF4DDD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C45C6F91AA6879900CF4DDD /* LaunchScreen.xib */; };
 		8C45C7071AA6879900CF4DDD /* TouchichiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C45C7061AA6879900CF4DDD /* TouchichiTests.swift */; };
 		8C45C7111AA689F700CF4DDD /* images in Resources */ = {isa = PBXBuildFile; fileRef = 8C45C7101AA689F700CF4DDD /* images */; };
@@ -29,6 +28,13 @@
 		8C8B7B0F1AC24124001F08E4 /* PigScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B7B0D1AC24124001F08E4 /* PigScene.swift */; };
 		8C8B7B111AC84307001F08E4 /* DaikonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B7B101AC84307001F08E4 /* DaikonScene.swift */; };
 		8C8B7B121AC84307001F08E4 /* DaikonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B7B101AC84307001F08E4 /* DaikonScene.swift */; };
+		8CAB34621AD139710019DE24 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CAB34611AD139710019DE24 /* Images.xcassets */; };
+		8CAB34661AD36E220019DE24 /* libAMoAd_3_0_6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CAB34651AD36E220019DE24 /* libAMoAd_3_0_6.a */; };
+		8CAB34681AD36E7B0019DE24 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CAB34671AD36E7B0019DE24 /* ImageIO.framework */; };
+		8CAB346A1AD36E860019DE24 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CAB34691AD36E860019DE24 /* AdSupport.framework */; };
+		8CAB346B1AD36F7B0019DE24 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CAB34671AD36E7B0019DE24 /* ImageIO.framework */; };
+		8CAB346C1AD36F7E0019DE24 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CAB34691AD36E860019DE24 /* AdSupport.framework */; };
+		8CAB346D1AD36F880019DE24 /* libAMoAd_3_0_6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CAB34651AD36E220019DE24 /* libAMoAd_3_0_6.a */; };
 		8CE81DB51AB3C4B00078E4DC /* DokanScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81DB41AB3C4B00078E4DC /* DokanScene.swift */; };
 		8CE81DB71AB3C4D50078E4DC /* TemplateScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81DB61AB3C4D50078E4DC /* TemplateScene.swift */; };
 		8CE81DB81AB3CC290078E4DC /* DokanScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81DB41AB3C4B00078E4DC /* DokanScene.swift */; };
@@ -72,7 +78,6 @@
 		8C45C6EE1AA6879900CF4DDD /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		8C45C6F21AA6879900CF4DDD /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8C45C6F51AA6879900CF4DDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8C45C6F71AA6879900CF4DDD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8C45C6FA1AA6879900CF4DDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8C45C7001AA6879900CF4DDD /* TouchichiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchichiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C45C7051AA6879900CF4DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +89,12 @@
 		8C8B7B0A1AC05B50001F08E4 /* HideScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideScene.swift; sourceTree = "<group>"; };
 		8C8B7B0D1AC24124001F08E4 /* PigScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PigScene.swift; sourceTree = "<group>"; };
 		8C8B7B101AC84307001F08E4 /* DaikonScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaikonScene.swift; sourceTree = "<group>"; };
+		8CAB34611AD139710019DE24 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = images/page/Images.xcassets; sourceTree = "<group>"; };
+		8CAB34641AD36E220019DE24 /* AMoAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdView.h; sourceTree = "<group>"; };
+		8CAB34651AD36E220019DE24 /* libAMoAd_3_0_6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAMoAd_3_0_6.a; sourceTree = "<group>"; };
+		8CAB34671AD36E7B0019DE24 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		8CAB34691AD36E860019DE24 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		8CAB346E1AD601900019DE24 /* Touchichi-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Touchichi-Bridging-Header.h"; sourceTree = "<group>"; };
 		8CE81DB41AB3C4B00078E4DC /* DokanScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DokanScene.swift; sourceTree = "<group>"; };
 		8CE81DB61AB3C4D50078E4DC /* TemplateScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateScene.swift; sourceTree = "<group>"; };
 		8CE935A11AA87D5200B0956C /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
@@ -100,6 +111,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CAB346A1AD36E860019DE24 /* AdSupport.framework in Frameworks */,
+				8CAB34681AD36E7B0019DE24 /* ImageIO.framework in Frameworks */,
+				8CAB34661AD36E220019DE24 /* libAMoAd_3_0_6.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +121,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CAB346D1AD36F880019DE24 /* libAMoAd_3_0_6.a in Frameworks */,
+				8CAB346B1AD36F7B0019DE24 /* ImageIO.framework in Frameworks */,
+				8CAB346C1AD36F7E0019DE24 /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +181,8 @@
 		8C45C6DE1AA6879900CF4DDD = {
 			isa = PBXGroup;
 			children = (
+				8CAB34691AD36E860019DE24 /* AdSupport.framework */,
+				8CAB34671AD36E7B0019DE24 /* ImageIO.framework */,
 				8C8B7B051ABCFEB0001F08E4 /* sounds */,
 				8C45C7101AA689F700CF4DDD /* images */,
 				8C45C6E91AA6879900CF4DDD /* Touchichi */,
@@ -186,6 +205,8 @@
 		8C45C6E91AA6879900CF4DDD /* Touchichi */ = {
 			isa = PBXGroup;
 			children = (
+				8CAB346E1AD601900019DE24 /* Touchichi-Bridging-Header.h */,
+				8CAB34631AD36E130019DE24 /* Amoad */,
 				8CE935C51AA87FCF00B0956C /* configuration.json */,
 				8C0A889C1AADAEB5002DB8B8 /* Utility */,
 				8C0A889B1AADAE9F002DB8B8 /* Libs */,
@@ -194,7 +215,7 @@
 				8C45C6EC1AA6879900CF4DDD /* AppDelegate.swift */,
 				8C45C6EE1AA6879900CF4DDD /* GameScene.sks */,
 				8C45C6F41AA6879900CF4DDD /* Main.storyboard */,
-				8C45C6F71AA6879900CF4DDD /* Images.xcassets */,
+				8CAB34611AD139710019DE24 /* Images.xcassets */,
 				8C45C6F91AA6879900CF4DDD /* LaunchScreen.xib */,
 				8C45C6EA1AA6879900CF4DDD /* Supporting Files */,
 			);
@@ -224,6 +245,15 @@
 				8C45C7051AA6879900CF4DDD /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8CAB34631AD36E130019DE24 /* Amoad */ = {
+			isa = PBXGroup;
+			children = (
+				8CAB34651AD36E220019DE24 /* libAMoAd_3_0_6.a */,
+				8CAB34641AD36E220019DE24 /* AMoAdView.h */,
+			);
+			name = Amoad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,9 +381,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C45C7111AA689F700CF4DDD /* images in Resources */,
+				8CAB34621AD139710019DE24 /* Images.xcassets in Resources */,
 				8C45C6FB1AA6879900CF4DDD /* LaunchScreen.xib in Resources */,
 				8C8B7B061ABCFEB0001F08E4 /* sounds in Resources */,
-				8C45C6F81AA6879900CF4DDD /* Images.xcassets in Resources */,
 				8C45C6EF1AA6879900CF4DDD /* GameScene.sks in Resources */,
 				8CE935C61AA87FCF00B0956C /* configuration.json in Resources */,
 				8C45C6F61AA6879900CF4DDD /* Main.storyboard in Resources */,
@@ -561,7 +591,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Touchichi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Touchichi",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(TARGET_NAME)/$(TARGET_NAME)-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -572,7 +608,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Touchichi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Touchichi",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(TARGET_NAME)/$(TARGET_NAME)-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -589,7 +631,12 @@
 				);
 				INFOPLIST_FILE = TouchichiTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Touchichi",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Touchichi/Touchichi-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -602,7 +649,12 @@
 				);
 				INFOPLIST_FILE = TouchichiTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Touchichi",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Touchichi/Touchichi-Bridging-Header.h";
 				"TEST_HOST[sdk=iphoneos*]" = "";
 			};
 			name = Release;

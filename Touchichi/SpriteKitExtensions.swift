@@ -293,17 +293,32 @@ class THScene : SKScene {
         let touch: AnyObject? = touches.anyObject()
         let pointInScene = touch?.locationInNode(self)
         let touchedNode = self.nodeAtPoint(pointInScene!)
+        let nodes = self.nodesAtPoint(pointInScene!) as [THSpriteNode]
         println(touchedNode.name)
         if touchedNode.name != nil {
-            if touchedNode.name == "homeButton" { self.changeScene(TopScene(size:SCREEN_SIZE)) }
-            if touchedNode.name == "menuButton" { self.changeScene(MenuScene(size:SCREEN_SIZE)) }
+            if touchedNode.name == "homeButton" { self.changeScene(TopScene(size:SCREEN_SIZE)); return; }
+            if touchedNode.name == "menuButton" { self.changeScene(MenuScene(size:SCREEN_SIZE)); return; }
         }
         if !self.isTouchDisabled() { onTouchScene(touchedNode) }
-        if !touchedNode.isTouchDisabled() { touchedNode.onTouchBegan() }
+        
+        if penetrateTouch() == true {
+            for node : THSpriteNode in nodes {
+                if !node.isTouchDisabled() {
+                    node.onTouchBegan()
+                }
+            }
+        }
+        else if !touchedNode.isTouchDisabled() {
+            touchedNode.onTouchBegan()
+        }
     }
     
     func disableTouch(){
         self.touchDisabled = true
+    }
+    
+    func penetrateTouch() -> Bool{
+        return false
     }
     
     func enableTouch(){
@@ -323,10 +338,12 @@ class THScene : SKScene {
         let scene = self
         return SKAction.runBlock(){
             let reveal = SKTransition.flipHorizontalWithDuration(0.5)
+            stopBGM()
             nextScene.initialize()
             self.view?.presentScene(nextScene,transition:reveal)
             scene.removeAllActions()
             scene.removeAllChildren()
+            removeAdView()
         }
     }
     

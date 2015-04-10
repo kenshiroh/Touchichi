@@ -16,9 +16,6 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="topbg.bmp" highlightedImage="topbg.bmp" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B8g-NH-4eW">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.042187354847202818" green="1" blue="0.22986943630385392" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -30,7 +27,4 @@
             <point key="canvasLocation" x="515" y="418"/>
         </view>
     </objects>
-    <resources>
-        <image name="topbg.bmp" width="400" height="709"/>
-    </resources>
 </document>

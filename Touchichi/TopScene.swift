@@ -13,7 +13,9 @@ class TopScene: THScene {
         /* Setup your scene here */
         backgroundColor = SKColor.fromHexCode("#00a900")
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        
+
+        playBGM("sounds/BGM1.mp3")
+
         let bgPicture = THSpriteNode(img: "page/topbg")
         bgPicture.scaleBy(4.0)
         bgPicture.position = CGPoint(x: size.width/2, y: size.height/2)

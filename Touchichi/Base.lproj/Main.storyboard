@@ -1,25 +1,92 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LVB-YS-i5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LVB-YS-i5n">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="CtS-rA-C9T">
             <objects>
-                <viewController id="LVB-YS-i5n" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LVB-YS-i5n" customClass="GameViewController" customModule="Touchichi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PCf-gQ-wO7"/>
                         <viewControllerLayoutGuide type="bottom" id="b3d-qh-BLL"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bdc-N1-crn" customClass="SKView">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="center" id="bdc-N1-crn" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <rect key="contentStretch" x="0.0" y="0.0" width="0.49999999999999961" height="1"/>
                     </view>
+                    <connections>
+                        <segue destination="zYt-yT-nF3" kind="show" identifier="toExplanation" id="ofC-gR-hQG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="68" y="136"/>
+        </scene>
+        <!--Explanation View Controller-->
+        <scene sceneID="Zf5-9N-lpH">
+            <objects>
+                <viewController id="zYt-yT-nF3" customClass="ExplanationViewController" customModule="Touchichi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yby-7A-Z3v"/>
+                        <viewControllerLayoutGuide type="bottom" id="hGK-mc-ouB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3uC-gY-BPr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="プライバシーポリシー" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LBu-H5-pJ7">
+                                <rect key="frame" x="17" y="40" width="566" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.19999999999999968"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDc-K2-KTP" customClass="ExplanationUITextView" customModule="Touchichi" customModuleProvider="target">
+                                <rect key="frame" x="17" y="80" width="566" height="510"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">お客様より提供いただいた個人情報の重要性を認識し、位下の方針に基づき取り扱うものとします。■個人情報の取得について当社は、個人情報の保護に関する法律などに則り、的包括構成な手段によって、個人情報を取得致します。■個人情報の利用目的について当社は、個人情報を取得の際に示した利用目的の範囲内で、業務の遂行上必要な限りにおいて、利用致します。■第三者提供について当社では、取得したお客様の情報を、法令などに定める場合を除き、お客様の同意なく第三者に提供することはありません。■個人情報の開示・訂正・利用停止・消去についてお客様の個人情報について、開示・訂正・利用停止・消去などをご希望される場合、当社の定める手順にしたがってお申し出下さい。当社にて、本人確認などを行った後、合理的な範囲にて対応させていただきます。■変更について本個人情報保護方針は、より適切な措置を講ずるために改定することがあります。■問い合わせ窓口本方針に関するお問い合わせについては、touchichichi@gmail.comまで、ご連絡下さい</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12158607560172059" green="0.78583559782608692" blue="0.1659411197217541" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="VDc-K2-KTP" secondAttribute="bottom" constant="10" id="Aj7-8F-1iH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VDc-K2-KTP" secondAttribute="trailing" constant="1" id="MPR-Rm-zAs"/>
+                            <constraint firstAttribute="centerX" secondItem="LBu-H5-pJ7" secondAttribute="centerX" id="PQ3-Pn-6Hl"/>
+                            <constraint firstAttribute="centerX" secondItem="VDc-K2-KTP" secondAttribute="centerX" id="Qhk-DS-9WI"/>
+                            <constraint firstItem="VDc-K2-KTP" firstAttribute="leading" secondItem="3uC-gY-BPr" secondAttribute="leadingMargin" constant="1" id="Tfa-4s-S24"/>
+                            <constraint firstItem="LBu-H5-pJ7" firstAttribute="top" secondItem="yby-7A-Z3v" secondAttribute="bottom" constant="20" id="V71-L5-olF"/>
+                            <constraint firstItem="LBu-H5-pJ7" firstAttribute="top" secondItem="yby-7A-Z3v" secondAttribute="bottom" constant="1" id="Ypb-Fa-W3w"/>
+                            <constraint firstItem="LBu-H5-pJ7" firstAttribute="leading" secondItem="3uC-gY-BPr" secondAttribute="leadingMargin" constant="1" id="c2W-Bb-Kq0"/>
+                            <constraint firstItem="VDc-K2-KTP" firstAttribute="top" secondItem="LBu-H5-pJ7" secondAttribute="bottom" constant="10" id="q1w-OD-i0g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LBu-H5-pJ7" secondAttribute="trailing" constant="1" id="x9U-rh-8Zu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="LVB-YS-i5n" kind="show" identifier="toGame" id="w1P-fE-IvF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Pn-vw-RMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="818" y="136"/>
         </scene>
     </scenes>
 </document>

@@ -42,6 +42,20 @@ class UnchiScene: THScene, SKPhysicsContactDelegate {
         
         makeBirdPeriodically()
     }
+
+    override func onTouchScene(touchedNode:SKNode) {
+        runAction(SKAction.playSound("unchiEmit"))
+        let unchi = UnchiSprite(
+            img:"unchi/unchi",
+            name:"unchi",
+            position:posByRatio(x: 0.42, y: 0.78),
+            zPosition: 10.0
+        )
+        unchi.addPhysics()
+        self.addChild(unchi)
+        unchi.applyImpulse(dx:3.0,dy:0.0)
+        unchi.applyAngularImpulse(-0.005)
+    }
     
     func makeBirdPeriodically(){
         runAction(SKAction.repeatActionForeverInSequence([
@@ -65,14 +79,13 @@ class UnchiScene: THScene, SKPhysicsContactDelegate {
     }
     
     func removeAllUnchiExcept(remainUnchi:UnchiSprite){
-        enumerateChildNodesWithName("unchi", usingBlock: {
-            (node,stop) in
+        childrenByName("unchi").each{(node) in
             let unchi = node as UnchiSprite
             if unchi != remainUnchi { unchi.removeFromParent() }
-        })
+        }
     }
     
-    override func didBeginContact(firstNode: SKNode, secondNode: SKNode) {
+    override func didBeginContact(firstNode: SKNode, secondNode: SKNode, contactPoint: CGPoint) {
         let firstSprite = firstNode as THSpriteNode
         let secondSprite = secondNode as THSpriteNode
         if(firstSprite.name == "bird"){
@@ -98,10 +111,10 @@ class UnchiBird : THSpriteNode {
         cow.disableTouch()
         
         parentScene.removeAllUnchiExcept(unchi)
-        parentScene.enumerateChildNodesWithName("bird", usingBlock: {
-            (bird,stop) in
+        parentScene.childrenByName("bird").each{(node) in
+            let bird = node as THSpriteNode
             bird.removeAllActions()
-        })
+        }
         
         unchi.physicsBody = nil
         unchi.position = CGPoint(x:unchi.position.x,y:unchi.position.y - 5)
@@ -109,8 +122,7 @@ class UnchiBird : THSpriteNode {
         self.texture = textureFromPath("unchi/birdFail")
         unchi.texture = textureFromPath("unchi/unchiSmile")
         parentScene.removeAllUnchiExcept(unchi)
-        parentScene.enumerateChildNodesWithName("bird", usingBlock: {
-            (node,stop) in
+        parentScene.childrenByName("bird").each{(node) in
             let bird = node as THSpriteNode
             bird.runActionInSequence([
                 SKAction.waitForDuration(1.0),
@@ -118,7 +130,7 @@ class UnchiBird : THSpriteNode {
                 SKAction.moveBy(CGVectorMake(SCREEN_SIZE.width, 0.0), duration: 1.0),
                 bird.removeFromParentAction(),
             ])
-        })
+        }
         unchi.runActionInSequence([
             SKAction.waitForDuration(1.0),
             SKAction.playSound("hiyokoRunAway"),
@@ -138,19 +150,6 @@ class UnchiBird : THSpriteNode {
 }
 
 class CowSprite : THSpriteNode {
-    override func onTouchBegan() {
-        runAction(SKAction.playSound("unchiEmit"))
-        let unchi = UnchiSprite(
-            img:"unchi/unchi",
-            name:"unchi",
-            position:posByRatio(x: 0.42, y: 0.78),
-            zPosition: 10.0
-        )
-        unchi.addPhysics()
-        self.parent?.addChild(unchi)
-        unchi.applyImpulse(dx:3.0,dy:0.0)
-        unchi.applyAngularImpulse(-0.005)
-    }
 }
 
 class UnchiSprite : THSpriteNode {

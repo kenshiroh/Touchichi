@@ -125,9 +125,9 @@ class HideObject : THSpriteNode {
         }
         else{
             runAction(SKAction.playSound("pullInDirt"))
-            runActionInSequence(SKAction.vibrateActionSequence())
+            runActionInSequence(SKAction.vibrateActionSequence(interval:0.09))
             runActionInSequence([
-                SKAction.moveBy(CGVectorMake(0.0, 10.0), duration: 1.0),
+                SKAction.moveBy(CGVectorMake(0.0, 15.0), duration: 0.09),
                 SKAction.runBlock(){ self.enableTouch() }
             ])
         }

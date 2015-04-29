@@ -43,6 +43,7 @@ class PigScene: THScene,SKPhysicsContactDelegate {
 
     override func initialize() {
         /* Setup your scene here */
+        enableTouch()
 
         physicsWorld.gravity = CGVectorMake(0, 0)
         physicsWorld.contactDelegate = self
@@ -61,7 +62,7 @@ class PigScene: THScene,SKPhysicsContactDelegate {
         rightPig.startMoving()
     }
     
-    override func didBeginContact(firstNode: SKNode, secondNode: SKNode) {
+    override func didBeginContact(firstNode: SKNode, secondNode: SKNode, contactPoint: CGPoint) {
         var leftPig : PigLeftSprite
         var rightPig : PigRightSprite
         runAction(SKAction.playSound("pigHit"))

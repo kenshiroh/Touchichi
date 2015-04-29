@@ -199,6 +199,17 @@ extension SKNode {
         }
         return result
     }
+    
+    func childrenByName(targetName:String) -> [SKNode] {
+        var selected : [SKNode] = []
+        for child : AnyObject in children {
+            let node = child as SKNode
+            if(node.name != nil && node.name == targetName){
+                selected.append(node)
+            }
+        }
+        return selected
+    }
 
     func removeChildrenByNames(nameList:[String]){
         let children = self.childrenByNames(nameList)
@@ -299,7 +310,7 @@ class THScene : SKScene {
             if touchedNode.name == "homeButton" { self.changeScene(TopScene(size:SCREEN_SIZE)); return; }
             if touchedNode.name == "menuButton" { self.changeScene(MenuScene(size:SCREEN_SIZE)); return; }
         }
-        if !self.isTouchDisabled() { onTouchScene(touchedNode) }
+        if !self.isTouchDisabled() { onTouchScene(touchedNode); }
         
         if penetrateTouch() == true {
             for node : THSpriteNode in nodes {
@@ -330,20 +341,23 @@ class THScene : SKScene {
         return false
     }
     
+    func destruct(){}
+    
     // needs to be overrided
     func onTouchScene(node:SKNode){}
-    func didBeginContact(firstNode: SKNode,secondNode: SKNode){}
+    func didBeginContact(firstNode: SKNode,secondNode: SKNode,contactPoint: CGPoint){}
 
     func changeSceneAction(nextScene: THScene) -> SKAction {
         let scene = self
         return SKAction.runBlock(){
             let reveal = SKTransition.flipHorizontalWithDuration(0.5)
+            self.destruct()
             stopBGM()
-            nextScene.initialize()
+            removeAdView()
             self.view?.presentScene(nextScene,transition:reveal)
+            nextScene.initialize()
             scene.removeAllActions()
             scene.removeAllChildren()
-            removeAdView()
         }
     }
     
@@ -361,7 +375,9 @@ class THScene : SKScene {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        didBeginContact(firstBody.node!,secondNode:secondBody.node!)
+        
+        if(firstBody.node == nil || secondBody.node == nil) { return }
+        didBeginContact(firstBody.node!,secondNode:secondBody.node!,contactPoint: contact.contactPoint)
     }
     
     func makeWallsAllAround(){
@@ -429,5 +445,18 @@ class HomeButtonSprite : THSpriteNode {
     override func onTouchBegan() {
         let parentScene = self.parent as THScene
         parentScene.changeScene(TopScene(size:SCREEN_SIZE))
+    }
+}
+
+extension UIView {
+    var parentViewController: UIViewController? {
+        var parentResponder: UIResponder? = self
+        while parentResponder != nil {
+            parentResponder = parentResponder!.nextResponder()
+            if parentResponder is UIViewController {
+                return parentResponder as UIViewController!
+            }
+        }
+        return nil
     }
 }

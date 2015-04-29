@@ -18,12 +18,14 @@ class GameViewController: UIViewController,AMoAdViewDelegate {
         controller = self
         
         // initial scene
-        let scene = MenuScene(size: SCREEN_SIZE)
-        println(scene.size)
+        let scene = TopScene(size: SCREEN_SIZE)
+
+        // 広告の初期化
+        initializeAdView()
         
         let skView = view as SKView
-        skView.showsFPS = true
-        skView.showsNodeCount = true
+//        skView.showsFPS = true
+//        skView.showsNodeCount = true
         skView.ignoresSiblingOrder = true
         scene.scaleMode = .AspectFit
         skView.presentScene(scene)
@@ -41,10 +43,6 @@ class GameViewController: UIViewController,AMoAdViewDelegate {
                 self.bgmSuspendedOnSuspend = false
             }
         }
-
-        // 広告の設置
-        initializeAdView()
-        addAdView()
     }
     
     func appliWentBackground(notification : NSNotification){

@@ -37,7 +37,16 @@ func addAdView(){
 }
 
 func initializeAdView(){
-    amoadView = AMoAdView(frame: CGRectMake(0, SCREEN_SIZE.height - 50, 320, 50))
+    let iphoneScreenSize = UIScreen.mainScreen().applicationFrame.size
+    let height = iphoneScreenSize.height / 9.0
+    let adRect = CGRectMake(
+        0,
+        iphoneScreenSize.height-50,
+        iphoneScreenSize.width,
+        height)
+    amoadView = AMoAdView(frame: adRect)
+    println("adsize:")
+    println(adRect)
     amoadView.sid = "62056d310111552cb7f04a8a5f63addba5adae91fd08aa653cd9d68c981f3228"
     amoadView.rotateTransition = AMoAdRotateTransitionFlipFromLeft
     amoadView.clickTransition = AMoAdClickTransitionJump
@@ -167,6 +176,8 @@ struct PhysicsCategory {
 
 let ZERO_POINT : CGPoint = CGPoint(x:0.0,y:0.0)
 let SCREEN_SIZE : CGSize = CGSize(width: 320.0,height:568.0)
+let IPHONE_SIZE = UIScreen.mainScreen().applicationFrame.size
+
 
 func centerX() -> CGFloat {
     return SCREEN_SIZE.width / 2.0

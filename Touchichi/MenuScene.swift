@@ -54,6 +54,7 @@ class MenuScene: THScene {
     }
     
     override func initialize() {
+        addAdView()
         playBGM("sounds/BGM1.mp3")
     }
     

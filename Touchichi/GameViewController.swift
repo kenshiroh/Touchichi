@@ -23,7 +23,7 @@ class GameViewController: UIViewController,AMoAdViewDelegate {
         // 広告の初期化
         initializeAdView()
         
-        let skView = view as SKView
+        let skView = view as! SKView
 //        skView.showsFPS = true
 //        skView.showsNodeCount = true
         skView.ignoresSiblingOrder = true

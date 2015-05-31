@@ -25,12 +25,7 @@ class TouchichiTests: XCTestCase {
     func testTHSpriteNode(){
         let thSprite = THSpriteNode(size:CGSize(width: 10, height: 10))
     }
-    
-    func testUtility(){
-        XCTAssert(Config.json["test"].string == "testvalue", "success!")
-        XCTAssert(randBelow(10) < 10,"success!")
-    }
-    
+        
     func testExample() {
         // This is an example of a functional test case.
         XCTAssert(true, "Pass")

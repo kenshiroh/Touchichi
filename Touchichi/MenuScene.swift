@@ -99,7 +99,7 @@ class MenuScene: THScene {
         }
         
         iconSceneConf.each{(config) in
-            let icon = iconImage(img: config["image"] as String,scene:config["scene"] as THScene,pos:config["position"] as [CGFloat])
+            let icon = iconImage(img: config["image"] as! String,scene:config["scene"] as! THScene,pos:config["position"] as! [CGFloat])
             self.addChild(icon)
         }
         
@@ -116,7 +116,7 @@ class MenuScene: THScene {
 
 class rightMenuArrowIcon : THSpriteNode {
     override func onTouchBegan() {
-        let parentScene = self.parent as MenuScene
+        let parentScene = self.parent as! MenuScene
         parentScene.currentPage += 1
         parentScene.loadPage()
     }
@@ -124,7 +124,7 @@ class rightMenuArrowIcon : THSpriteNode {
 
 class leftMenuArrowIcon : THSpriteNode {
     override func onTouchBegan() {
-        let parentScene = self.parent as MenuScene
+        let parentScene = self.parent as! MenuScene
         parentScene.currentPage -= 1
         parentScene.loadPage()
     }
@@ -141,7 +141,7 @@ class iconImage : THSpriteNode {
     }
     
     override func onTouchBegan() {
-        let parentScene = self.parent as THScene
+        let parentScene = self.parent as! THScene
         parentScene.changeScene(transitionScene)
     }
 
@@ -154,7 +154,7 @@ class bgHiyoko : THSpriteNode {
     var defaultPosition : CGPoint = ZERO_POINT
     override func onTouchBegan() {
         if touchDisabled { return }
-        let parentScene = self.parent as THScene
+        let parentScene = self.parent as! THScene
         parentScene.runAction(SKAction.playSound("hiyokoCrash"))
         self.removeAllActions()
         self.position = self.defaultPosition

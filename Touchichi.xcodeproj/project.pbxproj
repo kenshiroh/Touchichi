@@ -43,12 +43,10 @@
 		8CE81DB51AB3C4B00078E4DC /* DokanScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81DB41AB3C4B00078E4DC /* DokanScene.swift */; };
 		8CE81DB71AB3C4D50078E4DC /* TemplateScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81DB61AB3C4D50078E4DC /* TemplateScene.swift */; };
 		8CE81DB81AB3CC290078E4DC /* DokanScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81DB41AB3C4B00078E4DC /* DokanScene.swift */; };
-		8CE935A31AA87D5200B0956C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE935A21AA87D5200B0956C /* SwiftyJSON.swift */; };
 		8CE935C61AA87FCF00B0956C /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CE935C51AA87FCF00B0956C /* configuration.json */; };
 		8CE935D01AA94B3C00B0956C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE935CF1AA94B3C00B0956C /* Utility.swift */; };
 		8CE935D11AA94B6700B0956C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE935CF1AA94B3C00B0956C /* Utility.swift */; };
 		8CE935D21AA9DCD900B0956C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C45C6F21AA6879900CF4DDD /* GameViewController.swift */; };
-		8CE935D31AA9DCE400B0956C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE935A21AA87D5200B0956C /* SwiftyJSON.swift */; };
 		8CE935D41AA9DCE400B0956C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C45C6EC1AA6879900CF4DDD /* AppDelegate.swift */; };
 		8CE935D51AA9DCE400B0956C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8C45C6EE1AA6879900CF4DDD /* GameScene.sks */; };
 		8CE935D71AA9DCED00B0956C /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CE935C51AA87FCF00B0956C /* configuration.json */; };
@@ -105,8 +103,6 @@
 		8CAB346E1AD601900019DE24 /* Touchichi-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Touchichi-Bridging-Header.h"; sourceTree = "<group>"; };
 		8CE81DB41AB3C4B00078E4DC /* DokanScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DokanScene.swift; sourceTree = "<group>"; };
 		8CE81DB61AB3C4D50078E4DC /* TemplateScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateScene.swift; sourceTree = "<group>"; };
-		8CE935A11AA87D5200B0956C /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
-		8CE935A21AA87D5200B0956C /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		8CE935A81AA87E5700B0956C /* sampleSnippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleSnippets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE935B71AA87E5700B0956C /* sampleSnippetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sampleSnippetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE935C51AA87FCF00B0956C /* configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration.json; sourceTree = "<group>"; };
@@ -170,8 +166,6 @@
 		8C0A889B1AADAE9F002DB8B8 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				8CE935A11AA87D5200B0956C /* SwiftyJSON.h */,
-				8CE935A21AA87D5200B0956C /* SwiftyJSON.swift */,
 				8C45C7121AA715E100CF4DDD /* String+Hex.swift */,
 			);
 			name = Libs;
@@ -359,6 +353,7 @@
 				TargetAttributes = {
 					8C45C6E61AA6879900CF4DDD = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = TG84U5F736;
 					};
 					8C45C6FF1AA6879900CF4DDD = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -454,7 +449,6 @@
 				8CE935D01AA94B3C00B0956C /* Utility.swift in Sources */,
 				8C45C7131AA715E100CF4DDD /* String+Hex.swift in Sources */,
 				8C8B7B0E1AC24124001F08E4 /* PigScene.swift in Sources */,
-				8CE935A31AA87D5200B0956C /* SwiftyJSON.swift in Sources */,
 				8C7304171AF0B09100E2F86F /* ExplanationViewCotroller.swift in Sources */,
 				8C45C6ED1AA6879900CF4DDD /* AppDelegate.swift in Sources */,
 			);
@@ -478,7 +472,6 @@
 				8C8B7B0F1AC24124001F08E4 /* PigScene.swift in Sources */,
 				8CE81DB81AB3CC290078E4DC /* DokanScene.swift in Sources */,
 				8C7304181AF0B09100E2F86F /* ExplanationViewCotroller.swift in Sources */,
-				8CE935D31AA9DCE400B0956C /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +606,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Touchichi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -621,6 +616,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(TARGET_NAME)/$(TARGET_NAME)-Bridging-Header.h";
 			};
 			name = Debug;
@@ -630,6 +626,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Touchichi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -638,6 +636,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(TARGET_NAME)/$(TARGET_NAME)-Bridging-Header.h";
 			};
 			name = Release;

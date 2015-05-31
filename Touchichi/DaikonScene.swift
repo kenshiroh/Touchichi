@@ -55,7 +55,7 @@ class DaikonSprite : THSpriteNode {
             SKAction.runBlock(){
                 if(self.isOutOfScreen()){
                     println("daiko out of screen!! adding new one")
-                    let parentScene = self.parent as DaikonScene
+                    let parentScene = self.parent as! DaikonScene
                     self.removeAllActions()
                     self.removeFromParent()
                     parentScene.addDaikon(1)
@@ -77,7 +77,7 @@ class DaikonSprite : THSpriteNode {
     
     override func onTouchBegan(){
         disableTouch()
-        let parentScene = self.parent as THScene
+        let parentScene = self.parent as! THScene
         parentScene.runAction(SKAction.playSound("daikonTouched"))
         self.removeAllActions()
         runActionInSequence([

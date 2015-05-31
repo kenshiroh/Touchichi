@@ -203,7 +203,7 @@ extension SKNode {
     func childrenByName(targetName:String) -> [SKNode] {
         var selected : [SKNode] = []
         for child : AnyObject in children {
-            let node = child as SKNode
+            let node = child as! SKNode
             if(node.name != nil && node.name == targetName){
                 selected.append(node)
             }
@@ -300,11 +300,11 @@ class THScene : SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
-    internal override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        let touch: AnyObject? = touches.anyObject()
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        let touch: AnyObject? = touches.first
         let pointInScene = touch?.locationInNode(self)
         let touchedNode = self.nodeAtPoint(pointInScene!)
-        let nodes = self.nodesAtPoint(pointInScene!) as [THSpriteNode]
+        let nodes = self.nodesAtPoint(pointInScene!) as! [THSpriteNode]
         println(touchedNode.name)
         if touchedNode.name != nil {
             if touchedNode.name == "homeButton" { self.changeScene(TopScene(size:SCREEN_SIZE)); return; }
@@ -436,14 +436,14 @@ class THScene : SKScene {
 
 class ChooseButtonSprite : THSpriteNode {
     override func onTouchBegan() {
-        let parentScene = self.parent as THScene
+        let parentScene = self.parent as! THScene
         parentScene.changeScene(MenuScene(size:SCREEN_SIZE))
     }
 }
 
 class HomeButtonSprite : THSpriteNode {
     override func onTouchBegan() {
-        let parentScene = self.parent as THScene
+        let parentScene = self.parent as! THScene
         parentScene.changeScene(TopScene(size:SCREEN_SIZE))
     }
 }
@@ -454,7 +454,7 @@ extension UIView {
         while parentResponder != nil {
             parentResponder = parentResponder!.nextResponder()
             if parentResponder is UIViewController {
-                return parentResponder as UIViewController!
+                return parentResponder as! UIViewController!
             }
         }
         return nil

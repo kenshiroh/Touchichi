@@ -9,22 +9,6 @@
 import SpriteKit
 import AVFoundation
 
-
-class Config {
-    let jsonVal:JSON = nil
-    class var json : JSON {
-        struct Static {
-            static let instance : Config = Config()
-        }
-        return Static.instance.jsonVal
-    }
-    init(){
-        let path = NSBundle(forClass:Config.self).pathForResource("configuration",ofType:"json")
-        let data = NSData(contentsOfFile: path!)
-        jsonVal = JSON(data:data!)
-    }
-}
-
 ///////////////////
 // AdObject
 ///////////////////

@@ -9,13 +9,13 @@
 import SpriteKit
 
 class ExplanationViewController : UIViewController {
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.performSegueWithIdentifier("toGame", sender: nil)
     }
 }
 
 class ExplanationUITextView : UITextView {
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         println("touch on uitextview")
         self.parentViewController!.performSegueWithIdentifier("toGame", sender: nil)
     }

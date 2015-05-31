@@ -64,7 +64,7 @@ class TopScene: THScene {
 
 class BgHiyokoAtMenu : THSpriteNode {
     override func onTouchBegan() {
-        let scene = self.parent as THScene
+        let scene = self.parent as! THScene
         scene.changeScene(MenuScene(size: scene.size))
     }
 }

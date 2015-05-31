@@ -56,8 +56,8 @@ class PigScene: THScene,SKPhysicsContactDelegate {
     override func onTouchScene(node: SKNode) {
         disableTouch()
         runAction(SKAction.playSound("pigApproach"))
-        let leftPig = childNodeWithName("leftPig") as PigLeftSprite
-        let rightPig = childNodeWithName("rightPig") as PigRightSprite
+        let leftPig = childNodeWithName("leftPig") as! PigLeftSprite
+        let rightPig = childNodeWithName("rightPig") as! PigRightSprite
         leftPig.startMoving()
         rightPig.startMoving()
     }
@@ -67,11 +67,11 @@ class PigScene: THScene,SKPhysicsContactDelegate {
         var rightPig : PigRightSprite
         runAction(SKAction.playSound("pigHit"))
         if(firstNode.name == "leftPig"){
-            leftPig = firstNode as PigLeftSprite
-            rightPig = secondNode as PigRightSprite
+            leftPig = firstNode as! PigLeftSprite
+            rightPig = secondNode as! PigRightSprite
         }else{
-            leftPig = secondNode as PigLeftSprite
-            rightPig = firstNode as PigRightSprite
+            leftPig = secondNode as! PigLeftSprite
+            rightPig = firstNode as! PigRightSprite
         }
         leftPig.beginContact()
         rightPig.beginContact()
@@ -79,9 +79,9 @@ class PigScene: THScene,SKPhysicsContactDelegate {
     
     func addPigObjects(){
         let objConf = pigPatternConf[randBelow(pigPatternConf.count)]
-        let image = objConf["image"] as String
-        let lookBackImage = objConf["lookBackImage"] as String
-        let xRatio = objConf["xRatio"] as CGFloat
+        let image = objConf["image"] as! String
+        let lookBackImage = objConf["lookBackImage"] as! String
+        let xRatio = objConf["xRatio"] as! CGFloat
         let defScale : CGFloat = 2.3
         let leftPig = PigLeftSprite(
             img:image,
@@ -115,7 +115,7 @@ class PigLeftSprite : THSpriteNode {
     }
     
     func beginContact(){
-        let parentScene = self.parent as THScene
+        let parentScene = self.parent as! THScene
         self.physicsBody = nil
         self.removeAllActions()
         self.runActionInSequence([

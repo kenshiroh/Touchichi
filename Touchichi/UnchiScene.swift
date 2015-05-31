@@ -80,20 +80,20 @@ class UnchiScene: THScene, SKPhysicsContactDelegate {
     
     func removeAllUnchiExcept(remainUnchi:UnchiSprite){
         childrenByName("unchi").each{(node) in
-            let unchi = node as UnchiSprite
+            let unchi = node as! UnchiSprite
             if unchi != remainUnchi { unchi.removeFromParent() }
         }
     }
     
     override func didBeginContact(firstNode: SKNode, secondNode: SKNode, contactPoint: CGPoint) {
-        let firstSprite = firstNode as THSpriteNode
-        let secondSprite = secondNode as THSpriteNode
+        let firstSprite = firstNode as! THSpriteNode
+        let secondSprite = secondNode as! THSpriteNode
         if(firstSprite.name == "bird"){
-            let birdSprite = firstSprite as UnchiBird
-            birdSprite.hitUnchi(secondNode as UnchiSprite)
+            let birdSprite = firstSprite as! UnchiBird
+            birdSprite.hitUnchi(secondNode as! UnchiSprite)
         }else if(secondSprite.name == "bird"){
-            let birdSprite = secondSprite as UnchiBird
-            birdSprite.hitUnchi(firstNode as UnchiSprite)
+            let birdSprite = secondSprite as! UnchiBird
+            birdSprite.hitUnchi(firstNode as! UnchiSprite)
         }
         
     }
@@ -101,18 +101,18 @@ class UnchiScene: THScene, SKPhysicsContactDelegate {
 
 class UnchiBird : THSpriteNode {
     func hitUnchi(unchi:UnchiSprite){
-        let parentScene = self.parent as UnchiScene
+        let parentScene = self.parent as! UnchiScene
         
         parentScene.runAction(SKAction.playSound("unchiHitHiyoko"))
         
         parentScene.removeActionForKey("makeBirdAction")
         
-        let cow = parentScene.childNodeWithName("cow") as THSpriteNode
+        let cow = parentScene.childNodeWithName("cow") as! THSpriteNode
         cow.disableTouch()
         
         parentScene.removeAllUnchiExcept(unchi)
         parentScene.childrenByName("bird").each{(node) in
-            let bird = node as THSpriteNode
+            let bird = node as! THSpriteNode
             bird.removeAllActions()
         }
         
@@ -123,7 +123,7 @@ class UnchiBird : THSpriteNode {
         unchi.texture = textureFromPath("unchi/unchiSmile")
         parentScene.removeAllUnchiExcept(unchi)
         parentScene.childrenByName("bird").each{(node) in
-            let bird = node as THSpriteNode
+            let bird = node as! THSpriteNode
             bird.runActionInSequence([
                 SKAction.waitForDuration(1.0),
                 bird.changeTextureAction("unchi/birdRun"),

@@ -65,9 +65,9 @@ class HideScene: THScene {
     
     func addHidingObject(){
         let objConf = hidingObjectConf[randBelow(hidingObjectConf.count)]
-        let imgPath = objConf["image"] as String
-        let afterImage = objConf["afterImage"] as String
-        let positionRatio = objConf["positionRatio"] as [CGFloat]
+        let imgPath = objConf["image"] as! String
+        let afterImage = objConf["afterImage"] as! String
+        let positionRatio = objConf["positionRatio"] as! [CGFloat]
         let defPosition = posByRatio(x: positionRatio[0], y: positionRatio[1])
         let hideObj = HideObject(
             img:imgPath,
@@ -84,7 +84,7 @@ class HideScene: THScene {
 
 class HideDirt : THSpriteNode {
     override func onTouchBegan() {
-        let parentScene = parent as THScene
+        let parentScene = parent as! THScene
         let hidingObj = parentScene.childNodeWithName("hidingObj")
         if( hidingObj != nil){
             hidingObj?.onTouchBegan()
@@ -116,7 +116,7 @@ class HideObject : THSpriteNode {
                 SKAction.scaleTo(0.01, duration: 0.5),
                 SKAction.runBlock(){
                     self.enableTouch()
-                    let parentScene = self.parent as HideScene
+                    let parentScene = self.parent as! HideScene
                     self.removeFromParent()
                     println("hideobj removed!!")
                     parentScene.addHidingObject()

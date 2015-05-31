@@ -80,7 +80,7 @@ class DokanScene: THScene, SKPhysicsContactDelegate {
     
     func accelerateAllHamsters(){
         for child : SKNode in self.childrenByName("movingHamster") {
-            let hamster = child as hamsterDokan
+            let hamster = child as! hamsterDokan
             hamster.physicsBody?.applyImpulse(CGVectorMake(100.0, 100.0))
         }
     }
@@ -89,21 +89,21 @@ class DokanScene: THScene, SKPhysicsContactDelegate {
         // both are hamsters
         if(firstNode.physicsBody?.categoryBitMask == PhysicsCategory.moving){
             runAction(SKAction.playSound("hamsterHitEachOther"))
-            let hamster1 = firstNode as hamsterDokan
-            let hamster2 = secondNode as hamsterDokan
+            let hamster1 = firstNode as! hamsterDokan
+            let hamster2 = secondNode as! hamsterDokan
             hamster1.runHitFaceActionIfNormal()
             hamster2.runHitFaceActionIfNormal()
             emitStarParticle(contactPoint)
         }
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         super.touchesBegan(touches,withEvent:event)
     }
 
     func emitStarParticle(emissionPoint:CGPoint){
         let path = NSBundle.mainBundle().pathForResource("HamsterCrash", ofType: "sks")
-        var particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as SKEmitterNode
+        var particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as! SKEmitterNode
         particle.numParticlesToEmit = 5
         particle.position = emissionPoint
         self.addChild(particle)
@@ -116,7 +116,7 @@ class DokanScene: THScene, SKPhysicsContactDelegate {
             zPosition: -100.0
             )
         cat.position = CGPoint(x:-1*cat.size.width,y:centerY())
-        let dokan = self.childNodeWithName("dokan") as Dokan
+        let dokan = self.childNodeWithName("dokan") as! Dokan
         self.catAppeared = true
         cat.runAction(
             cat.switchTextureForeverAction(["cat/cat","cat/cat2"],interval:0.5)
@@ -151,7 +151,7 @@ class Dokan : THSpriteNode {
     override func onTouchBegan() {
         disableTouch()
 
-        let parentScene : DokanScene = self.parent as DokanScene
+        let parentScene : DokanScene = self.parent as! DokanScene
         if parentScene.catAppeared { return }
         
         // 土管の発射後の収縮
